@@ -1,0 +1,20 @@
+                            <form #postData="ngForm" (ngSubmit)="myclick(postData.value)">
+                                <table>
+                                    <tr *ngFor="let student of edu; index as i">
+                                        <td>
+                                            <input type="text" name="education_{{i+1}}" value="" value="{{student.education}}" #stid [(ngModel)]="student.education"
+                                            />
+                                        </td>
+                                        <td>
+                                            <input type="text" name="university_{{i+1}}" value="" value="{{student.university}}" #stid [(ngModel)]="student.university"
+                                            />
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button (click)="myclick()">Click </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
