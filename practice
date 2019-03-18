@@ -1,4 +1,21 @@
-                            <form #postData="ngForm" (ngSubmit)="myclick(postData.value)">
+  studentsdata: any[] = [{}];
+  
+  
+    myclick(data) {
+
+    let n = this.edu.length;
+    console.log(n);
+    console.log(data);
+    for (let i = 1; i <= n; i++) {
+      this.studentsdata.push({ 'education': data['education_' + i], 'university': data['university_' + i] });
+    }
+    this.studentsdata.shift();
+    console.log(this.studentsdata);
+
+  }
+  
+  ===========================================================
+                              <form #postData="ngForm" (ngSubmit)="myclick(postData.value)">
                                 <table>
                                     <tr *ngFor="let student of edu; index as i">
                                         <td>
